@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FacturaFácil — Facturación electrónica en la nube</title>
+    <meta name="description" content="Emite CFDI rápido y seguro. Timbrado, control de planes y folios en una interfaz moderna." />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Theme color adaptable -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8fafc" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f172a" />
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Aplica el tema ANTES de que cargue la app para evitar parpadeo -->
+ <script>
+  (function () {
+    try {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved ?? 'dark'; 
+      const root = document.documentElement;
+      if (theme === 'dark') root.classList.add('dark');
+      else root.classList.remove('dark');
+    } catch (_) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+
+
+    <!-- (Opcional) Evita transiciones notorias en el primer paint -->
+    <style>
+      html { color-scheme: light dark; }
+      /* Tailwind aplicará los colores; esto solo asegura fondo inicial */
+      body { background: #f8fafc; }
+      .dark body { background: #0f172a; }
+    </style>
+  </head>
+  <body class="h-full bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
