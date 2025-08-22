@@ -5,7 +5,7 @@ export default function PorQueEscogernos() {
         
         {/* Texto */}
         <div className="text-center md:text-left">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-sky-600 mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5B6FCF] mb-6 leading-tight">
             ¿Por qué elegir nuestra plataforma de facturación electrónica?
           </h2>
           <p className="text-slate-600 mb-8 leading-relaxed text-base sm:text-lg">
@@ -14,7 +14,7 @@ export default function PorQueEscogernos() {
 
           <ul className="space-y-6 text-slate-800 text-left">
             <li>
-              <h3 className="text-sky-600 font-semibold text-lg sm:text-xl">
+              <h3 className="text-[#5B6FCF] font-semibold text-lg sm:text-xl">
                 🚀 Carga masiva de catálogos
               </h3>
               <p className="text-slate-600 text-base">
@@ -22,7 +22,7 @@ export default function PorQueEscogernos() {
               </p>
             </li>
             <li>
-              <h3 className="text-sky-600 font-semibold text-lg sm:text-xl">
+              <h3 className="text-[#5B6FCF] font-semibold text-lg sm:text-xl">
                 📱 Compatible con todos tus dispositivos
               </h3>
               <p className="text-slate-600 text-base">
@@ -30,7 +30,7 @@ export default function PorQueEscogernos() {
               </p>
             </li>
             <li>
-              <h3 className="text-sky-600 font-semibold text-lg sm:text-xl">
+              <h3 className="text-[#5B6FCF] font-semibold text-lg sm:text-xl">
                 ⚙️ Timbrado masivo en segundos
               </h3>
               <p className="text-slate-600 text-base">

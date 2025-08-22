@@ -1,4 +1,3 @@
-// CasosExito.jsx
 import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y } from 'swiper/modules';
@@ -42,22 +41,22 @@ export default function CasosExito() {
       <div className="max-w-6xl mx-auto">
         {/* Encabezado */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-cyan-900">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-[#5B6FCF]">
             Nuestros casos de éxito
           </h2>
-          <p className="mt-4 text-cyan-900/80 text-base md:text-lg">
+          <p className="mt-4 text-[#5B6FCF]/80 text-base md:text-lg">
             Orgullosos de poder mostrar los casos de éxito de nuestros clientes
           </p>
         </div>
 
         <div className="relative">
-          {/* Flechas personalizadas (izquierda/derecha) */}
+          {/* Flechas personalizadas */}
           <button
             ref={prevRef}
             aria-label="Anterior"
             className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10
-                       h-12 w-12 rounded-full border border-cyan-900/20 text-cyan-900
-                       items-center justify-center hover:bg-cyan-50 transition"
+                       h-12 w-12 rounded-full border border-[#5B6FCF]/30 text-[#5B6FCF]
+                       items-center justify-center hover:bg-[#CCD1F5] transition"
           >
             ‹
           </button>
@@ -65,8 +64,8 @@ export default function CasosExito() {
             ref={nextRef}
             aria-label="Siguiente"
             className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10
-                       h-12 w-12 rounded-full border border-cyan-900/20 text-cyan-900
-                       items-center justify-center hover:bg-cyan-50 transition"
+                       h-12 w-12 rounded-full border border-[#5B6FCF]/30 text-[#5B6FCF]
+                       items-center justify-center hover:bg-[#CCD1F5] transition"
           >
             ›
           </button>
@@ -81,9 +80,7 @@ export default function CasosExito() {
               bulletActiveClass: 'swiper-pagination-bullet-active custom-bullet-active',
             }}
             onBeforeInit={(swiper) => {
-             
               swiper.params.navigation.prevEl = prevRef.current;
-             
               swiper.params.navigation.nextEl = nextRef.current;
             }}
             navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
@@ -92,10 +89,10 @@ export default function CasosExito() {
             {casos.map((c, i) => (
               <SwiperSlide key={i}>
                 <div className="max-w-4xl mx-auto text-center">
-                  <h3 className="text-3xl md:text-4xl font-extrabold text-teal-500 mb-6">
+                  <h3 className="text-3xl md:text-4xl font-extrabold text-[#5B6FCF] mb-6">
                     {c.cliente}
                   </h3>
-                  <p className="text-lg md:text-xl leading-8 text-cyan-900/90">
+                  <p className="text-lg md:text-xl leading-8 text-slate-700">
                     {c.texto}
                   </p>
                 </div>
@@ -103,7 +100,7 @@ export default function CasosExito() {
             ))}
           </Swiper>
 
-          
+          {/* Estilos bullets */}
           <style>{`
             .custom-bullet {
               width: 14px;
@@ -115,7 +112,7 @@ export default function CasosExito() {
               transition: transform .2s ease, background .2s ease;
             }
             .custom-bullet-active {
-              background: #9CA3AF; /* gray-400 */
+              background: #5B6FCF; /* Azul de paleta */
               transform: scale(1.1);
             }
           `}</style>

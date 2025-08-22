@@ -6,14 +6,14 @@ export default function Beneficios2() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Columna izquierda con texto */}
         <div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-sky-600 mb-8 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#5B6FCF] mb-8 leading-tight">
             Tu sistema de facturación electrónica
           </h2>
 
           {/* Beneficio 1 */}
           <div className="mb-10">
             <p className="flex items-center gap-3 text-xl md:text-2xl font-semibold text-slate-900">
-              <span className="text-3xl text-sky-600">✔</span> Factura en segundos, sin complicaciones
+              <span className="text-3xl text-[#5B6FCF]">✔</span> Factura en segundos, sin complicaciones
             </p>
             <p className="text-lg text-slate-600 mt-3">
               Olvídate de los procesos lentos. Con nuestra{' '}
@@ -24,13 +24,13 @@ export default function Beneficios2() {
             </p>
           </div>
 
-          {/* Línea divisoria negra */}
+          {/* Línea divisoria */}
           <hr className="border-black mb-10" />
 
           {/* Beneficio 2 */}
           <div>
             <p className="flex items-center gap-3 text-xl md:text-2xl font-semibold text-slate-900">
-              <span className="text-3xl text-sky-600">✔</span> Siempre disponible, sin interrupciones
+              <span className="text-3xl text-[#5B6FCF]">✔</span> Siempre disponible, sin interrupciones
             </p>
             <p className="text-lg text-slate-600 mt-3">
               Nuestro <strong className="text-slate-900">sistema de facturación</strong> está activo las 24 horas, los 7 días de la semana.
@@ -51,7 +51,7 @@ export default function Beneficios2() {
         </div>
       </div>
 
-      {/* División inferior negra */}
+      {/* División inferior */}
       <div className="w-screen overflow-hidden leading-none text-black">
         <svg
           className="w-full h-10 block"

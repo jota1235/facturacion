@@ -71,14 +71,15 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <Link
-            to="/registro"
-            className="ml-3 bg-gradient-to-r from-sky-400 to-emerald-400 text-white font-semibold
-                       px-6 py-3 text-lg rounded-xl shadow hover:opacity-95 active:opacity-90
-                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2"
-          >
-            Solicita tu prueba gratuita
-          </Link>
+         <Link
+  to="/registro"
+  className="ml-3 bg-gradient-to-r from-[#4B007D] to-[#5B6FCF] text-white font-semibold
+             px-6 py-3 text-lg rounded-xl shadow hover:opacity-95 active:opacity-90
+             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF] focus-visible:ring-offset-2"
+>
+  Solicita tu prueba gratuita
+</Link>
+
         </div>
       </div>
 

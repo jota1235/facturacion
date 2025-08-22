@@ -7,13 +7,13 @@ export default function Hero() {
         id="inicio"
         className="
           px-4 sm:px-6 
-          pt-28 lg:pt-32   /* 🔹 Espacio superior para que no lo tape el nav */
+          pt-28 lg:pt-32
           w-full min-h-screen overflow-x-hidden
           bg-slate-50
           text-slate-800
           font-sans
           transition-colors
-          scroll-mt-28    /* 🔹 Anclas ajustadas para que no se oculten */
+          scroll-mt-28
         "
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -23,7 +23,7 @@ export default function Hero() {
               className="
                 text-4xl sm:text-5xl md:text-6xl lg:text-7xl 
                 font-extrabold leading-tight
-                text-cyan-700
+                text-[#4B007D]   /* Morado oscuro para destacar */
               "
             >
               Facturación<br />electrónica
@@ -44,11 +44,12 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-4 animate-in fade-in slide-in-from-bottom duration-700 delay-500">
+              {/* Botón 1 */}
               <button
                 className="
-                  border border-cyan-500 text-cyan-700
-                  hover:bg-cyan-500 hover:text-white
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2
+                  border border-[#4B007D] text-[#4B007D]
+                  hover:bg-[#4B007D] hover:text-white
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B007D] focus-visible:ring-offset-2
                   bg-white
                   font-bold py-3 px-6 rounded-md transition text-lg
                   shadow-sm
@@ -56,11 +57,13 @@ export default function Hero() {
               >
                 No lo pienses más
               </button>
+
+              {/* Botón 2 */}
               <button
                 className="
-                  border border-cyan-500 text-cyan-700
-                  hover:bg-cyan-500 hover:text-white
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2
+                  border border-[#5B6FCF] text-[#5B6FCF]
+                  hover:bg-[#5B6FCF] hover:text-white
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF] focus-visible:ring-offset-2
                   bg-white
                   font-bold py-3 px-6 rounded-md transition text-lg
                   shadow-sm

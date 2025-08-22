@@ -8,7 +8,7 @@ const Ventajas = () => {
     >
       <div className="max-w-7xl mx-auto">
         <h2
-          className="text-3xl md:text-4xl font-bold text-sky-600 text-center mb-16"
+          className="text-3xl md:text-4xl font-bold text-[#5C6BCF] text-center mb-16"
           style={{ fontFamily: "'Poppins', sans-serif" }}
         >
           Ventajas de elegir FacturaFacil como tu solución CFDI
@@ -39,7 +39,7 @@ const Ventajas = () => {
                 className="text-xl font-semibold flex items-center gap-2 mb-3"
                 style={{ color: '#4A1E73' }}
               >
-                ✅ Automatización total en facturación
+                <span style={{ color: '#5C6BCF' }}>✔️</span> Automatización total en facturación
               </h3>
               <p className="text-gray-900 leading-relaxed font-medium">
                 Optimiza tu operación con emisión rápida, precisa y segura de facturas electrónicas.
@@ -62,7 +62,7 @@ const Ventajas = () => {
                 className="text-xl font-semibold flex items-center gap-2 mb-3"
                 style={{ color: '#B678BC' }}
               >
-                ✔️ Control fiscal inteligente
+                <span style={{ color: '#5C6BCF' }}>✔️</span> Control fiscal inteligente
               </h3>
               <p className="text-gray-900 leading-relaxed font-medium">
                 ¿Pagas dividendos o realizas operaciones con extranjeros? Cumple fácilmente con el SAT
@@ -84,7 +84,7 @@ const Ventajas = () => {
                 className="text-xl font-semibold flex items-center gap-2 mb-3"
                 style={{ color: '#5C6BCF' }}
               >
-                🚀 Timbrado masivo sin límites
+                <span style={{ color: '#5C6BCF' }}>✔️</span> Timbrado masivo sin límites
               </h3>
               <p className="text-gray-900 leading-relaxed font-medium">
                 Integra nuestro sistema con tu ERP o software externo. Timbra miles de CFDIs usando
