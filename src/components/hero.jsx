@@ -4,12 +4,16 @@ export default function Hero() {
   return (
     <>
       <section
+        id="inicio"
         className="
-          px-4 sm:px-6 py-24 w-full min-h-screen overflow-x-hidden
+          px-4 sm:px-6 
+          pt-28 lg:pt-32   /* 🔹 Espacio superior para que no lo tape el nav */
+          w-full min-h-screen overflow-x-hidden
           bg-slate-50
           text-slate-800
           font-sans
           transition-colors
+          scroll-mt-28    /* 🔹 Anclas ajustadas para que no se oculten */
         "
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -67,7 +71,7 @@ export default function Hero() {
             </div>
           </div>
 
-          
+          {/* Imagen */}
           <div className="flex justify-center md:justify-end animate-in fade-in slide-in-from-bottom duration-700 delay-700">
             <img
               src="/principal.jpg"
@@ -82,13 +86,13 @@ export default function Hero() {
           </div>
         </div>
 
-      
+        {/* Carrusel */}
         <div className="mt-16 flex justify-center max-w-full px-4">
           <LogoCarousel />
         </div>
       </section>
 
- 
+      {/* División decorativa */}
       <div className="w-full overflow-hidden leading-none text-black">
         <svg
           className="w-full h-10 block"

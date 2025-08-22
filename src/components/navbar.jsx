@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';   // 👈 Importar Link
 import logoEmpresa from '/navbar.png'; 
 
 export default function Navbar() {
@@ -21,13 +22,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 lg:py-5 flex justify-between items-center">
         
         {/* Logo empresa */}
-        <a href="#inicio" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src={logoEmpresa}
             alt="Logo Empresa"
             className="h-12 w-auto object-contain"
           />
-        </a>
+        </Link>
 
         {/* Botón móvil */}
         <div className="lg:hidden">
@@ -53,31 +54,31 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-10">
           <ul className="flex items-center gap-8 text-lg font-semibold">
             {[
-              { href: '#inicio', label: 'Inicio' },
-              { href: '#servicios', label: 'Servicios' },
-              { href: '#precios', label: 'Precios' },
-              { href: '#contacto', label: 'Contacto' },
+              { to: '/#inicio', label: 'Inicio' },
+              { to: '/#servicios', label: 'Servicios' },
+              { to: '/#precios', label: 'Precios' },
+              { to: '/#contacto', label: 'Contacto' },
             ].map((item) => (
-              <li key={item.href} className="group">
-                <a
-                  href={item.href}
+              <li key={item.to} className="group">
+                <Link
+                  to={item.to}
                   className="relative text-slate-700 hover:text-cyan-700 transition focus-visible:outline-none"
                 >
                   {item.label}
                   <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-cyan-600 transition-all group-hover:w-full" />
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
 
-          <a
-            href="/registro"
+          <Link
+            to="/registro"
             className="ml-3 bg-gradient-to-r from-sky-400 to-emerald-400 text-white font-semibold
                        px-6 py-3 text-lg rounded-xl shadow hover:opacity-95 active:opacity-90
                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2"
           >
             Solicita tu prueba gratuita
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -89,18 +90,18 @@ export default function Navbar() {
                     ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         <ul className="space-y-4 font-semibold text-lg">
-          <li><a href="#inicio" className="block text-slate-700 hover:text-cyan-700 transition">Inicio</a></li>
-          <li><a href="#servicios" className="block text-slate-700 hover:text-cyan-700 transition">Servicios</a></li>
-          <li><a href="#precios" className="block text-slate-700 hover:text-cyan-700 transition">Precios</a></li>
-          <li><a href="#contacto" className="block text-slate-700 hover:text-cyan-700 transition">Contacto</a></li>
+          <li><Link to="/#inicio" className="block text-slate-700 hover:text-cyan-700 transition">Inicio</Link></li>
+          <li><Link to="/#servicios" className="block text-slate-700 hover:text-cyan-700 transition">Servicios</Link></li>
+          <li><Link to="/#precios" className="block text-slate-700 hover:text-cyan-700 transition">Precios</Link></li>
+          <li><Link to="/#contacto" className="block text-slate-700 hover:text-cyan-700 transition">Contacto</Link></li>
         </ul>
-        <a
-          href="/registro"
+        <Link
+          to="/registro"
           className="mt-5 inline-block w-full text-center bg-gradient-to-r from-sky-400 to-emerald-400
                      text-white font-semibold px-6 py-3 text-lg rounded-xl shadow hover:opacity-95"
         >
           Solicita tu prueba gratuita
-        </a>
+        </Link>
       </div>
     </nav>
   );
