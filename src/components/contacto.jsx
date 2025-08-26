@@ -1,8 +1,12 @@
 import React from "react";
 
+
+
+
 export default function ContactForm() {
   return (
     <section
+    id="contacto" 
       className="w-full py-16 px-6 bg-white"
       style={{ fontFamily: "Poppins, sans-serif" }}
     >

@@ -1,5 +1,10 @@
 import { Cloud, Code, Headphones, Ruler, Settings, FileSpreadsheet, DollarSign, Star } from 'lucide-react';
 
+
+
+
+
+
 const caracteristicas = [
   { icon: <Cloud className="w-10 h-10 text-[#5B2C83]" />, title: 'Sistemas en la nube', text: 'Ingresa desde cualquier dispositivo, usa el servicio de facturación electrónica 24/7.', bgColor: 'bg-[#EDE7F6]' },
   { icon: <Code className="w-10 h-10 text-[#6C63FF]" />, title: 'API Facturación Electrónica', text: 'La API más avanzada, intégrala en apps, páginas web o software fácilmente.', bgColor: 'bg-[#EDE7F6]' },
@@ -13,7 +18,7 @@ const caracteristicas = [
 
 export default function Caracteristicas() {
   return (
-    <section className="w-full py-16 px-6 bg-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <section id="servicios"className="w-full py-16 px-6 bg-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-3xl font-bold text-[#003C57]">
           Características de nuestro software de facturación electrónica

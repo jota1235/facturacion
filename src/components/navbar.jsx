@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';   // 👈 Importar Link
-import logoEmpresa from '/navbar.png'; 
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import logoEmpresa from '/navbar.png';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,21 +14,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // cierra menú y hace scroll suave
+  const go = () => setMenuOpen(false);
+
   return (
-    <nav
-      className={`w-full fixed top-0 left-0 z-50 transition-all
-        ${scrolled ? 'bg-white/90 shadow-md' : 'bg-white/70'}
-        backdrop-blur-md border-b border-slate-200 text-slate-800`}
+    <nav className={`w-full fixed top-0 left-0 z-50 transition-all
+      ${scrolled ? 'bg-white/90 shadow-md' : 'bg-white/70'}
+      backdrop-blur-md border-b border-slate-200 text-slate-800`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 lg:py-5 flex justify-between items-center">
-        
-        {/* Logo empresa */}
+
         <Link to="/" className="flex items-center">
-          <img
-            src={logoEmpresa}
-            alt="Logo Empresa"
-            className="h-12 w-auto object-contain"
-          />
+          <img src={logoEmpresa} alt="Logo Empresa" className="h-12 w-auto object-contain" />
         </Link>
 
         {/* Botón móvil */}
@@ -41,11 +39,9 @@ export default function Navbar() {
             type="button"
           >
             <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {menuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
+              {menuOpen
+                ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
             </svg>
           </button>
         </div>
@@ -60,26 +56,26 @@ export default function Navbar() {
               { to: '/#contacto', label: 'Contacto' },
             ].map((item) => (
               <li key={item.to} className="group">
-                <Link
+                <HashLink
+                  smooth
                   to={item.to}
-                  className="relative text-slate-700 hover:text-cyan-700 transition focus-visible:outline-none"
+                  className="relative text-slate-700 hover:text-purple-700 transition focus-visible:outline-none"
                 >
                   {item.label}
-                  <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-cyan-600 transition-all group-hover:w-full" />
-                </Link>
+                  <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-purple-600 transition-all group-hover:w-full" />
+                </HashLink>
               </li>
             ))}
           </ul>
 
-         <Link
-  to="/registro"
-  className="ml-3 bg-gradient-to-r from-[#4B007D] to-[#5B6FCF] text-white font-semibold
-             px-6 py-3 text-lg rounded-xl shadow hover:opacity-95 active:opacity-90
-             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF] focus-visible:ring-offset-2"
->
-  Solicita tu prueba gratuita
-</Link>
-
+          <Link
+            to="/registro"
+            className="ml-3 bg-gradient-to-r from-[#4B007D] to-[#5B6FCF] text-white font-semibold
+                       px-6 py-3 text-lg rounded-xl shadow hover:opacity-95 active:opacity-90
+                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF] focus-visible:ring-offset-2"
+          >
+            Solicita tu prueba gratuita
+          </Link>
         </div>
       </div>
 
@@ -91,13 +87,15 @@ export default function Navbar() {
                     ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         <ul className="space-y-4 font-semibold text-lg">
-          <li><Link to="/#inicio" className="block text-slate-700 hover:text-cyan-700 transition">Inicio</Link></li>
-          <li><Link to="/#servicios" className="block text-slate-700 hover:text-cyan-700 transition">Servicios</Link></li>
-          <li><Link to="/#precios" className="block text-slate-700 hover:text-cyan-700 transition">Precios</Link></li>
-          <li><Link to="/#contacto" className="block text-slate-700 hover:text-cyan-700 transition">Contacto</Link></li>
+          <li><HashLink smooth to="/#inicio" onClick={go} className="relative text-slate-700 hover:text-purple-700 transition focus-visible:outline-none">Inicio</HashLink></li>
+          <li><HashLink smooth to="/#servicios" onClick={go} className="block text-slate-700 hover:text-purple-700 transition">Servicios</HashLink></li>
+          <li><HashLink smooth to="/#precios" onClick={go} className="block text-slate-700 hover:text-purple-700 transition">Precios</HashLink></li>
+          <li><HashLink smooth to="/#contacto" onClick={go} className="block text-slate-700 hover:text-purple-700 transition">Contacto</HashLink></li>
         </ul>
+
         <Link
           to="/registro"
+          onClick={go}
           className="mt-5 inline-block w-full text-center bg-gradient-to-r from-sky-400 to-emerald-400
                      text-white font-semibold px-6 py-3 text-lg rounded-xl shadow hover:opacity-95"
         >

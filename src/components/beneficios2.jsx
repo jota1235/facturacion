@@ -51,20 +51,7 @@ export default function Beneficios2() {
         </div>
       </div>
 
-      {/* División inferior */}
-      <div className="w-screen overflow-hidden leading-none text-black">
-        <svg
-          className="w-full h-10 block"
-          viewBox="0 0 1440 40"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="currentColor"
-            d="M1440,40L0,20L0,0L1440,0Z"
-          />
-        </svg>
-      </div>
+      
     </section>
   );
 }

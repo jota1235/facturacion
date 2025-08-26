@@ -53,10 +53,10 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-10">
           <ul className="flex items-center gap-8 text-lg font-semibold">
             {[
-              { href: '#inicio', label: 'Inicio' },
-              { href: '#servicios', label: 'Servicios' },
-              { href: '#precios', label: 'Precios' },
-              { href: '#contacto', label: 'Contacto' },
+              { href: '#inicio', label: '' },
+              { href: '#servicios', label: '' },
+              { href: '#precios', label: '' },
+              { href: '#contacto', label: '' },
             ].map((item) => (
               <li key={item.href} className="group">
                 <a

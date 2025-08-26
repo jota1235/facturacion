@@ -1,5 +1,7 @@
 import LogoCarousel from './carrusel';
 
+
+
 export default function Hero() {
   return (
     <>
@@ -95,17 +97,8 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* División decorativa */}
-      <div className="w-full overflow-hidden leading-none text-black">
-        <svg
-          className="w-full h-10 block"
-          viewBox="0 0 1440 40"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path fill="currentColor" d="M0,0 L1440,20 L1440,40 L0,40 Z" />
-        </svg>
-      </div>
+   
+      
     </>
   );
 }
