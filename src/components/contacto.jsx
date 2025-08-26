@@ -1,22 +1,22 @@
 import React from "react";
 
-
-
-
 export default function ContactForm() {
   return (
     <section
-    id="contacto" 
+      id="contacto"
       className="w-full py-16 px-6 bg-white"
       style={{ fontFamily: "Poppins, sans-serif" }}
     >
       <div className="max-w-5xl mx-auto">
         {/* Encabezado */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-cyan-900">
+          <h2
+            className="text-3xl md:text-5xl font-extrabold"
+            style={{ color: "#4B007D" }}
+          >
             Regístrate y recibe más información
           </h2>
-          <p className="mt-3 text-cyan-900/70">
+          <p className="mt-3 text-slate-700">
             Déjanos tus datos y te contactamos para cotización o prueba gratuita.
           </p>
         </div>
@@ -26,19 +26,26 @@ export default function ContactForm() {
           className="relative rounded-3xl bg-white p-6 sm:p-8 md:p-10 border border-slate-200"
           style={{
             boxShadow:
-              "0 10px 35px rgba(0, 170, 200, .18), 0 2px 10px rgba(15, 23, 42, .06)",
+              "0 10px 35px rgba(91,111,207,.18), 0 2px 10px rgba(15,23,42,.06)",
           }}
         >
-          {/* adorno de fondo */}
-          <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-cyan-50 blur-2xl" />
-          <div className="pointer-events-none absolute -bottom-12 -right-12 h-48 w-48 rounded-full bg-sky-50 blur-2xl" />
+          {/* acentos suaves */}
+          <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-[#F2EEFF] blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-12 -right-12 h-48 w-48 rounded-full bg-[#EEF0FF] blur-2xl" />
 
           {/* Badges */}
           <div className="mb-6 flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center rounded-full bg-cyan-50 text-cyan-700 px-3 py-1 text-sm font-medium ring-1 ring-cyan-100">
+            <span className="inline-flex items-center rounded-full bg-slate-50 text-slate-700 px-3 py-1 text-sm font-medium ring-1 ring-slate-200">
               Respuesta en &lt; 24h
             </span>
-            <span className="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 px-3 py-1 text-sm font-medium ring-1 ring-emerald-100">
+            <span
+              className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium"
+              style={{
+                background: "#EEF0FF",
+                color: "#4B007D",
+                border: "1px solid #E1E5FF",
+              }}
+            >
               Soporte sin costo
             </span>
           </div>
@@ -47,7 +54,6 @@ export default function ContactForm() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              // TODO: conecta con tu API / servicio de email
               alert("¡Gracias! Nos pondremos en contacto muy pronto.");
             }}
             className="grid grid-cols-1 md:grid-cols-2 gap-5"
@@ -61,7 +67,7 @@ export default function ContactForm() {
                 type="text"
                 placeholder="Nombre completo"
                 required
-                className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-[#5B6FCF] focus:border-[#5B6FCF] transition"
               />
             </div>
 
@@ -74,7 +80,7 @@ export default function ContactForm() {
                 type="email"
                 placeholder="tucorreo@dominio.com"
                 required
-                className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-[#5B6FCF] focus:border-[#5B6FCF] transition"
               />
             </div>
 
@@ -87,7 +93,7 @@ export default function ContactForm() {
                 type="tel"
                 placeholder="+52 222 123 4567"
                 required
-                className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-[#5B6FCF] focus:border-[#5B6FCF] transition"
               />
             </div>
 
@@ -98,7 +104,7 @@ export default function ContactForm() {
               </label>
               <select
                 required
-                className="w-full appearance-none rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                className="w-full appearance-none rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 outline-none focus:bg-white focus:ring-2 focus:ring-[#5B6FCF] focus:border-[#5B6FCF] transition"
                 defaultValue=""
               >
                 <option value="" disabled>
@@ -120,7 +126,7 @@ export default function ContactForm() {
               <input
                 type="text"
                 placeholder="Mi Empresa S.A. de C.V."
-                className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-[#5B6FCF] focus:border-[#5B6FCF] transition"
               />
             </div>
 
@@ -132,7 +138,7 @@ export default function ContactForm() {
               <textarea
                 rows={5}
                 placeholder="Cuéntanos brevemente para orientarte mejor…"
-                className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-[#5B6FCF] focus:border-[#5B6FCF] transition"
               />
             </div>
 
@@ -142,15 +148,23 @@ export default function ContactForm() {
                 id="terms"
                 type="checkbox"
                 required
-                className="mt-1 h-5 w-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                className="mt-1 h-5 w-5 rounded border-slate-300 text-[#5B6FCF] focus:ring-[#5B6FCF]"
               />
               <label htmlFor="terms" className="text-sm text-slate-600">
                 Acepto los{" "}
-                <a href="#" className="text-blue-600 font-medium underline">
+                <a
+                  href="#"
+                  className="font-medium underline"
+                  style={{ color: "#5B6FCF" }}
+                >
                   términos y condiciones
                 </a>{" "}
                 y el{" "}
-                <a href="#" className="text-blue-600 font-medium underline">
+                <a
+                  href="#"
+                  className="font-medium underline"
+                  style={{ color: "#5B6FCF" }}
+                >
                   aviso de privacidad
                 </a>
                 .
@@ -164,9 +178,9 @@ export default function ContactForm() {
                 className="w-full rounded-xl py-3.5 font-semibold text-white shadow-md transition transform hover:-translate-y-[1px]"
                 style={{
                   background:
-                    "linear-gradient(90deg, #38bdf8 0%, #06b6d4 50%, #22d3ee 100%)",
+                    "linear-gradient(90deg, #4B007D 0%, #5B6FCF 100%)",
                   boxShadow:
-                    "0 12px 25px rgba(6, 182, 212, .35), inset 0 1px 0 rgba(255,255,255,.2)",
+                    "0 12px 25px rgba(91,111,207,.35), inset 0 1px 0 rgba(255,255,255,.2)",
                 }}
               >
                 Solicitar cotización o prueba gratuita de 5 días

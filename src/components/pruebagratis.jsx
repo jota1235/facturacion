@@ -42,7 +42,7 @@ const PruebaGratis = () => {
                 '0 10px 35px rgba(91,111,207,.18), 0 2px 10px rgba(15,23,42,.06)',
             }}
           >
-            {/* badges */}
+            
             <div className="mb-6 flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center rounded-full bg-slate-50 text-slate-700 px-3 py-1 text-sm font-medium ring-1 ring-slate-200">
                 Respuesta en &lt; 24h

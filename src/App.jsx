@@ -17,6 +17,7 @@ import CasosExito from './components/casoExito';
 import Caracteristicas from './components/caracteristicas';
 import Equipo from './components/equipo';
 import ContactForm from './components/contacto'
+import Precios from './components/precios';
 
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import 'swiper/swiper-bundle.css'; 
@@ -74,6 +75,10 @@ function App() {
 
                   <section id="equipo" className="scroll-mt-24">
                     <Equipo />
+                  </section>
+
+                  <section id="precios" className="scroll-mt-24">
+                    <Precios />
                   </section>
 
                   <section id="preguntas-frecuentes" className="scroll-mt-24">

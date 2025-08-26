@@ -14,7 +14,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // cierra menú y hace scroll suave
   const go = () => setMenuOpen(false);
 
   return (
@@ -23,7 +22,6 @@ export default function Navbar() {
       backdrop-blur-md border-b border-slate-200 text-slate-800`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 lg:py-5 flex justify-between items-center">
-
         <Link to="/" className="flex items-center">
           <img src={logoEmpresa} alt="Logo Empresa" className="h-12 w-auto object-contain" />
         </Link>
@@ -32,7 +30,7 @@ export default function Navbar() {
         <div className="lg:hidden">
           <button
             onClick={() => setMenuOpen(v => !v)}
-            className="p-3 rounded-lg ring-1 ring-slate-300 hover:bg-slate-100 transition"
+            className="p-3 rounded-lg ring-1 ring-slate-300 hover:bg-slate-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF]"
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
@@ -59,10 +57,10 @@ export default function Navbar() {
                 <HashLink
                   smooth
                   to={item.to}
-                  className="relative text-slate-700 hover:text-purple-700 transition focus-visible:outline-none"
+                  className="relative text-slate-700 hover:text-[#4B007D] transition focus-visible:outline-none"
                 >
                   {item.label}
-                  <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-purple-600 transition-all group-hover:w-full" />
+                  <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-[#5B6FCF] transition-all group-hover:w-full" />
                 </HashLink>
               </li>
             ))}
@@ -87,17 +85,42 @@ export default function Navbar() {
                     ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         <ul className="space-y-4 font-semibold text-lg">
-          <li><HashLink smooth to="/#inicio" onClick={go} className="relative text-slate-700 hover:text-purple-700 transition focus-visible:outline-none">Inicio</HashLink></li>
-          <li><HashLink smooth to="/#servicios" onClick={go} className="block text-slate-700 hover:text-purple-700 transition">Servicios</HashLink></li>
-          <li><HashLink smooth to="/#precios" onClick={go} className="block text-slate-700 hover:text-purple-700 transition">Precios</HashLink></li>
-          <li><HashLink smooth to="/#contacto" onClick={go} className="block text-slate-700 hover:text-purple-700 transition">Contacto</HashLink></li>
+          <li className="group">
+            <HashLink smooth to="/#inicio" onClick={go}
+              className="relative block text-slate-700 hover:text-[#4B007D] transition focus-visible:outline-none">
+              Inicio
+              <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-[#5B6FCF] transition-all group-hover:w-full" />
+            </HashLink>
+          </li>
+          <li className="group">
+            <HashLink smooth to="/#servicios" onClick={go}
+              className="relative block text-slate-700 hover:text-[#4B007D] transition">
+              Servicios
+              <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-[#5B6FCF] transition-all group-hover:w-full" />
+            </HashLink>
+          </li>
+          <li className="group">
+            <HashLink smooth to="/#precios" onClick={go}
+              className="relative block text-slate-700 hover:text-[#4B007D] transition">
+              Precios
+              <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-[#5B6FCF] transition-all group-hover:w-full" />
+            </HashLink>
+          </li>
+          <li className="group">
+            <HashLink smooth to="/#contacto" onClick={go}
+              className="relative block text-slate-700 hover:text-[#4B007D] transition">
+              Contacto
+              <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-[#5B6FCF] transition-all group-hover:w-full" />
+            </HashLink>
+          </li>
         </ul>
 
         <Link
           to="/registro"
           onClick={go}
-          className="mt-5 inline-block w-full text-center bg-gradient-to-r from-sky-400 to-emerald-400
-                     text-white font-semibold px-6 py-3 text-lg rounded-xl shadow hover:opacity-95"
+          className="mt-5 inline-block w-full text-center bg-gradient-to-r from-[#4B007D] to-[#5B6FCF]
+                     text-white font-semibold px-6 py-3 text-lg rounded-xl shadow hover:opacity-95
+                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF]"
         >
           Solicita tu prueba gratuita
         </Link>
