@@ -1,6 +1,6 @@
 import LogoCarousel from './carrusel';
-
-
+import AuroraMotion from './AuroraMotion';
+import AuroraMotionSyServ from './AuroraMotion';
 
 export default function Hero() {
   return (
@@ -8,6 +8,7 @@ export default function Hero() {
       <section
         id="inicio"
         className="
+          relative isolate
           px-4 sm:px-6 
           pt-28 lg:pt-32
           w-full min-h-screen overflow-x-hidden
@@ -18,14 +19,17 @@ export default function Hero() {
           scroll-mt-28
         "
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Fondo animado tipo Fresha */}
+        <AuroraMotionSyServ />
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
           {/* Texto principal */}
           <div className="animate-in fade-in slide-in-from-bottom duration-700">
             <h1
               className="
                 text-4xl sm:text-5xl md:text-6xl lg:text-7xl 
                 font-extrabold leading-tight
-                text-[#4B007D]   /* Morado oscuro para destacar */
+                text-[#4B007D]
               "
             >
               Facturación<br />electrónica
@@ -92,13 +96,10 @@ export default function Hero() {
         </div>
 
         {/* Carrusel */}
-        <div className="mt-16 flex justify-center max-w-full px-4">
+        <div className="mt-16 flex justify-center max-w-full px-4 relative z-10">
           <LogoCarousel />
         </div>
       </section>
-
-   
-      
     </>
   );
 }

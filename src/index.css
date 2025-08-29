@@ -5,3 +5,43 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+/* globals.css */
+@layer utilities {
+  @keyframes blob-float-1 {
+    0%   { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
+    25%  { transform: translate3d(8%, -4%, 0) scale(1.05) rotate(10deg); }
+    50%  { transform: translate3d(-6%, 6%, 0) scale(1) rotate(-6deg); }
+    75%  { transform: translate3d(10%, 4%, 0) scale(1.07) rotate(8deg); }
+    100% { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
+  }
+
+  @keyframes blob-float-2 {
+    0%   { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
+    20%  { transform: translate3d(-10%, 6%, 0) scale(1.06) rotate(-8deg); }
+    55%  { transform: translate3d(6%, -8%, 0) scale(1) rotate(12deg); }
+    85%  { transform: translate3d(-6%, 3%, 0) scale(1.04) rotate(-6deg); }
+    100% { transform: translate3d(0,0,0) scale(1) rotate(0deg); }
+  }
+
+  @keyframes blob-pulse {
+    0%, 100% { transform: scale(1); opacity: .45; }
+    50%      { transform: scale(1.08); opacity: .6; }
+  }
+
+  .animate-blob-1 { animation: blob-float-1 26s ease-in-out infinite; }
+  .animate-blob-2 { animation: blob-float-2 32s ease-in-out infinite; }
+  .animate-pulse-soft { animation: blob-pulse 20s ease-in-out infinite; }
+
+  /* Delays reutilizables */
+  .animation-delay-2000 { animation-delay: 2s; }
+  .animation-delay-4000 { animation-delay: 4s; }
+  .animation-delay-6000 { animation-delay: 6s; }
+
+  /* Respeta accesibilidad: si el usuario prefiere menos movimiento */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-blob-1, .animate-blob-2, .animate-pulse-soft {
+      animation: none !important;
+    }
+  }
+}
