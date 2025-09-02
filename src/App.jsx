@@ -12,7 +12,6 @@ import Ventajas from './components/ventajas';
 import PreguntasFrecuentes from './components/preguntas';
 import Footer from './components/footer';
 import PruebaGratis from './components/pruebagratis';
-import PruebaDark from './components/PruebaDark';
 import CasosExito from './components/casoExito'; 
 import Caracteristicas from './components/caracteristicas';
 import Equipo from './components/equipo';
@@ -48,46 +47,36 @@ function App() {
                     <Hero />
                   </section>
 
-                  <section id="beneficios2" className="scroll-mt-24">
-                    <Beneficios2 />
-                  </section>             
+                           
 
 
                   <section id="beneficios" className="scroll-mt-24">
                     <Beneficios />
                   </section>
 
-                   <section id="casos-de-exito" className="scroll-mt-24">
-                    <CasosExito />
-                  </section>
-
-                  <section id="por-que-escogernos" className="scroll-mt-24">
-                    <PorQueEscogernos />
-                  </section>
-
-                  <section id="ventajas" className="scroll-mt-24">
-                    <Ventajas />
-                  </section>
 
                   <section id="caracteristicas" className="scroll-mt-24">
                     <Caracteristicas />
                   </section>
 
-                  <section id="equipo" className="scroll-mt-24">
-                    <Equipo />
+                   <section id="casos-de-exito" className="scroll-mt-24">
+                    <CasosExito />
                   </section>
 
                   <section id="precios" className="scroll-mt-24">
                     <Precios />
                   </section>
 
+                  <section id="por-que-escogernos" className="scroll-mt-24">
+                    <PorQueEscogernos />
+                  </section>
+
+
                   <section id="preguntas-frecuentes" className="scroll-mt-24">
                     <PreguntasFrecuentes />
                   </section>
 
-                  <section id="contacto" className="scroll-mt-24">
-                    <ContactForm />
-                  </section>
+               
 
                 </main>
                 <Footer />

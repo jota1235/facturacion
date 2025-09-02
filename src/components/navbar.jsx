@@ -74,7 +74,7 @@ export default function Navbar() {
                 { to: '/#inicio', label: 'Inicio' },
                 { to: '/#servicios', label: 'Servicios' },
                 { to: '/#precios', label: 'Precios' },
-                { to: '/#contacto', label: 'Contacto' },
+                { to: '/#contacto', label: '' },
               ].map((item) => (
                 <li key={item.to} className="group">
                   <HashLink

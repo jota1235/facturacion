@@ -4,14 +4,16 @@ export default function Precios() {
   return (
     <section
       id="precios"
-      className="scroll-mt-24 w-full bg-white py-16 sm:py-20 lg:py-24 px-4 sm:px-6"
+      className="scroll-mt-24 w-full bg-slate-50 py-16 sm:py-20 lg:py-24 px-4 sm:px-6"
       style={{ fontFamily: "Poppins, sans-serif" }}
     >
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <span className="inline-flex items-center rounded-full px-3 py-1 text-xs sm:text-sm font-medium
-                           bg-[#4B007D]/10 text-[#4B007D] ring-1 ring-[#4B007D]/15">
+          <span
+            className="inline-flex items-center rounded-full px-3 py-1 text-xs sm:text-sm font-medium
+                       bg-[#4B007D]/10 text-[#4B007D] ring-1 ring-[#4B007D]/15"
+          >
             Planes para cada necesidad
           </span>
           <h2
@@ -35,15 +37,19 @@ export default function Precios() {
             lg:max-w-none lg:grid-cols-3
           "
         >
-          {/* Card base helper */}
           {/* Básico */}
-          <div className="relative flex flex-col rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-sm">
-            <div className="mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold
-                            bg-[#5B6FCF]/10 text-[#5B6FCF] ring-1 ring-[#5B6FCF]/20">
+          <div className="relative flex flex-col rounded-xl bg-white p-6 sm:p-8 shadow-sm hover:shadow-md transition">
+            <div
+              className="mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold
+                         bg-[#5B6FCF]/10 text-[#5B6FCF] ring-1 ring-[#5B6FCF]/20"
+            >
               Básico
             </div>
             <div className="flex items-end gap-2">
-              <p className="text-3xl sm:text-4xl font-extrabold" style={{ color: "#5B6FCF" }}>
+              <p
+                className="text-3xl sm:text-4xl font-extrabold"
+                style={{ color: "#5B6FCF" }}
+              >
                 $199
               </p>
               <span className="text-slate-500 mb-1 text-sm">/ mes</span>
@@ -62,7 +68,15 @@ export default function Precios() {
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3">
                   <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-[#5B6FCF]/10 ring-1 ring-[#5B6FCF]/25 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="#5B6FCF" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-3.5 w-3.5"
+                      fill="none"
+                      stroke="#5B6FCF"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
                       <path d="M20 6L9 17l-5-5" />
                     </svg>
                   </span>
@@ -74,8 +88,10 @@ export default function Precios() {
             <button
               className="mt-8 w-full rounded-xl py-3.5 font-semibold text-white shadow-md transition hover:-translate-y-[1px]"
               style={{
-                background: "linear-gradient(90deg, #4B007D 0%, #5B6FCF 100%)",
-                boxShadow: "0 10px 22px rgba(91,111,207,.28), inset 0 1px 0 rgba(255,255,255,.2)",
+                background:
+                  "linear-gradient(90deg, #4B007D 0%, #5B6FCF 100%)",
+                boxShadow:
+                  "0 10px 22px rgba(91,111,207,.28), inset 0 1px 0 rgba(255,255,255,.2)",
               }}
             >
               Elegir Básico
@@ -83,24 +99,25 @@ export default function Precios() {
           </div>
 
           {/* Pro (destacado) */}
-          <div
-            className="relative flex flex-col rounded-3xl bg-white border p-6 sm:p-8 shadow-xl"
-            style={{
-              borderColor: "rgba(91,111,207,.35)",
-              boxShadow: "0 16px 40px rgba(91,111,207,.18)",
-            }}
-          >
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center rounded-full
-                              bg-[#4B007D] text-white text-xs font-semibold px-3 py-1 shadow">
+          <div className="relative flex flex-col rounded-xl bg-white p-6 sm:p-8 shadow-md hover:shadow-lg transition border border-[#5B6FCF]/30">
+            <span
+              className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center rounded-full
+                         bg-[#4B007D] text-white text-xs font-semibold px-3 py-1 shadow"
+            >
               Más popular
             </span>
 
-            <div className="mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold
-                            bg-[#4B007D]/10 text-[#4B007D] ring-1 ring-[#4B007D]/20">
+            <div
+              className="mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold
+                         bg-[#4B007D]/10 text-[#4B007D] ring-1 ring-[#4B007D]/20"
+            >
               Pro
             </div>
             <div className="flex items-end gap-2">
-              <p className="text-3xl sm:text-4xl font-extrabold" style={{ color: "#5B6FCF" }}>
+              <p
+                className="text-3xl sm:text-4xl font-extrabold"
+                style={{ color: "#5B6FCF" }}
+              >
                 $499
               </p>
               <span className="text-slate-500 mb-1 text-sm">/ mes</span>
@@ -120,7 +137,15 @@ export default function Precios() {
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3">
                   <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-[#4B007D]/10 ring-1 ring-[#4B007D]/25 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="#4B007D" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-3.5 w-3.5"
+                      fill="none"
+                      stroke="#4B007D"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
                       <path d="M20 6L9 17l-5-5" />
                     </svg>
                   </span>
@@ -129,13 +154,14 @@ export default function Precios() {
               ))}
             </ul>
 
-            {/* Empuja el botón al fondo en todas las alturas */}
             <div className="mt-auto">
               <button
                 className="mt-8 w-full rounded-xl py-3.5 font-semibold text-white transition hover:-translate-y-[1px]"
                 style={{
-                  background: "linear-gradient(90deg, #4B007D 0%, #5B6FCF 100%)",
-                  boxShadow: "0 12px 25px rgba(91,111,207,.35), inset 0 1px 0 rgba(255,255,255,.2)",
+                  background:
+                    "linear-gradient(90deg, #4B007D 0%, #5B6FCF 100%)",
+                  boxShadow:
+                    "0 12px 25px rgba(91,111,207,.35), inset 0 1px 0 rgba(255,255,255,.2)",
                 }}
               >
                 Elegir Pro
@@ -144,13 +170,18 @@ export default function Precios() {
           </div>
 
           {/* Empresarial */}
-          <div className="relative flex flex-col rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-sm">
-            <div className="mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold
-                            bg-[#5B6FCF]/10 text-[#5B6FCF] ring-1 ring-[#5B6FCF]/20">
+          <div className="relative flex flex-col rounded-xl bg-white p-6 sm:p-8 shadow-sm hover:shadow-md transition">
+            <div
+              className="mb-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold
+                         bg-[#5B6FCF]/10 text-[#5B6FCF] ring-1 ring-[#5B6FCF]/20"
+            >
               Empresarial
             </div>
             <div className="flex items-end gap-2">
-              <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold" style={{ color: "#5B6FCF" }}>
+              <p
+                className="text-2xl sm:text-3xl lg:text-4xl font-extrabold"
+                style={{ color: "#5B6FCF" }}
+              >
                 A medida
               </p>
             </div>
@@ -169,7 +200,15 @@ export default function Precios() {
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3">
                   <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-[#5B6FCF]/10 ring-1 ring-[#5B6FCF]/25 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="#5B6FCF" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-3.5 w-3.5"
+                      fill="none"
+                      stroke="#5B6FCF"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
                       <path d="M20 6L9 17l-5-5" />
                     </svg>
                   </span>
@@ -182,8 +221,10 @@ export default function Precios() {
               href="#contacto"
               className="mt-auto inline-flex w-full items-center justify-center rounded-xl py-3.5 font-semibold text-white transition hover:-translate-y-[1px]"
               style={{
-                background: "linear-gradient(90deg, #4B007D 0%, #5B6FCF 100%)",
-                boxShadow: "0 10px 22px rgba(91,111,207,.28), inset 0 1px 0 rgba(255,255,255,.2)",
+                background:
+                  "linear-gradient(90deg, #4B007D 0%, #5B6FCF 100%)",
+                boxShadow:
+                  "0 10px 22px rgba(91,111,207,.28), inset 0 1px 0 rgba(255,255,255,.2)",
               }}
             >
               Solicitar cotización

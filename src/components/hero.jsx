@@ -1,4 +1,4 @@
-import LogoCarousel from './carrusel';
+
 import AuroraMotion from './AuroraMotion';
 import AuroraMotionSyServ from './AuroraMotion';
 
@@ -19,11 +19,11 @@ export default function Hero() {
           scroll-mt-28
         "
       >
-        {/* Fondo animado tipo Fresha */}
+       
         <AuroraMotionSyServ />
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-          {/* Texto principal */}
+          
           <div className="animate-in fade-in slide-in-from-bottom duration-700">
             <h1
               className="
@@ -64,19 +64,7 @@ export default function Hero() {
                 No lo pienses más
               </button>
 
-              {/* Botón 2 */}
-              <button
-                className="
-                  border border-[#5B6FCF] text-[#5B6FCF]
-                  hover:bg-[#5B6FCF] hover:text-white
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF] focus-visible:ring-offset-2
-                  bg-white
-                  font-bold py-3 px-6 rounded-md transition text-lg
-                  shadow-sm
-                "
-              >
-                Solicitar más información
-              </button>
+              
             </div>
           </div>
 
@@ -95,10 +83,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Carrusel */}
-        <div className="mt-16 flex justify-center max-w-full px-4 relative z-10">
-          <LogoCarousel />
-        </div>
+        
       </section>
     </>
   );
