@@ -71,7 +71,7 @@ export default function Hero() {
           {/* Imagen */}
           <div className="flex justify-center md:justify-end animate-in fade-in slide-in-from-bottom duration-700 delay-700">
             <img
-              src="/principal.jpg"
+              src="/render_hero.png"
               alt="Vista del sistema"
               className="
                 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl
