@@ -45,3 +45,15 @@ body {
     }
   }
 }
+
+/* Delays para desfasar las auroras (como Fresha) */
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+.animation-delay-6000 { animation-delay: 6s; }
+
+/* Respeta accesibilidad: si el usuario prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob-1, .animate-blob-2, .animate-blob-3, .animate-pulse-soft {
+    animation: none !important;
+  }
+}

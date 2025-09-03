@@ -42,9 +42,9 @@ export default function Hero() {
                 animate-in fade-in slide-in-from-bottom duration-700 delay-300
               "
             >
-              <span role="img" aria-label="wave">💳</span>{' '}
+              <span role="img" aria-label="wave"></span>{' '}
               <span className="font-semibold text-gray-900">
-                Prueba el mejor sistema de facturación electrónica del 2025
+                💳 Transforma tu facturación electrónica: rápida, segura y lista para el futuro.
               </span>{' '}
               y <span className="font-semibold text-gray-900">olvídate de los problemas</span> con el SAT.
             </p>
