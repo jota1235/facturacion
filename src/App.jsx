@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 
-import { ThemeProvider } from './theme/ThemeProvider'; // <<— del paso anterior
+import { ThemeProvider } from './theme/ThemeProvider'; 
 import Navbar from './components/navbar';
 import Hero from './components/hero';
 import Beneficios from './components/beneficios';

@@ -1,46 +1,78 @@
-export default function AuroraMotionSyServ() {
+// src/components/AuroraMotion.jsx
+export default function AuroraMotion() {
   return (
     <div
       className="
-        pointer-events-none absolute inset-0 -z-10 overflow-hidden transform-gpu
-        [mask-image:radial-gradient(120%_100%_at_50%_50%,white,transparent_75%)]
-        motion-reduce:hidden
+        pointer-events-none absolute inset-0 -z-10 overflow-hidden
+        [mask-image:radial-gradient(120%_90%_at_50%_40%,white,transparent_78%)]
       "
       aria-hidden
     >
-      {/* Blob principal (morado/azul) */}
-      <span
+      {/* Capa base (suave, clara) */}
+      <div
         className="
-          absolute -top-40 -left-40 
-          h-[40rem] w-[40rem] lg:h-[60rem] lg:w-[60rem] 
-          rounded-full blur-3xl opacity-50 will-change-transform
-          bg-gradient-to-br from-[#9B6BC5]/60 via-[#4B007D]/40 to-[#6B8DD6]/40
-          animate-blob-1
-          mix-blend-multiply
+          absolute inset-0 opacity-85
+          bg-gradient-to-br from-[#f6f7ff] via-[#ece8fb] to-[#eef3ff]
         "
       />
 
-      {/* Blob aqua/azul más visible */}
-      <span
+      {/* Aro principal conic-gradient — más contraste y más rápido */}
+      <div
         className="
-          absolute bottom-0 right-1/4 
-          h-[35rem] w-[35rem] lg:h-[55rem] lg:w-[55rem]
-          rounded-full blur-3xl opacity-55 will-change-transform
-          bg-gradient-to-br from-[#38BDF8]/60 via-[#6B8DD6]/45 to-[#C8D0EA]/35
-          animate-blob-2 animation-delay-2000
-          mix-blend-multiply
+          absolute -inset-[24%] rounded-full
+          blur-2xl opacity-85 will-change-transform
+          animate-[spin_36s_linear_infinite]
         "
+        style={{
+          // paleta de tu logo: morado fuerte, azul medio, azul claro, lila
+          background:
+            'conic-gradient(from 0deg at 50% 50%, \
+              #4B2C83 0deg, \
+              #5B6FCF 90deg, \
+              #CCD2F8 180deg, \
+              #B48BC9 270deg, \
+              #4B2C83 360deg)',
+        }}
       />
 
-      {/* Glow central */}
-      <span
+      {/* Halo fino para “brillo” del aro (ayuda a que se note el giro) */}
+      <div
         className="
-          absolute top-1/3 left-1/2 -translate-x-1/2 
-          h-[26rem] w-[26rem] lg:h-[40rem] lg:w-[40rem]
-          rounded-full blur-2xl opacity-40 will-change-transform
-          bg-gradient-to-tr from-[#9B6BC5]/40 to-[#38BDF8]/30
-          animate-pulse-soft animation-delay-4000
+          absolute -inset-[26%] rounded-full
+          blur-[18px] opacity-60 will-change-transform
           mix-blend-screen
+          animate-[spin_36s_linear_infinite_reverse]
+        "
+        style={{
+          background:
+            'conic-gradient(from 30deg at 50% 50%, \
+              rgba(255,255,255,.0) 0deg, \
+              rgba(255,255,255,.55) 110deg, \
+              rgba(255,255,255,.0) 220deg, \
+              rgba(255,255,255,.55) 330deg, \
+              rgba(255,255,255,.0) 360deg)',
+        }}
+      />
+
+      {/* Blob morado (menos blur y más opacidad) */}
+      <span
+        className="
+          absolute left-[-10%] top-[-12%]
+          h-[40rem] w-[40rem] rounded-full
+          blur-2xl opacity-50 bg-[#4B2C83]
+          will-change-transform
+          animate-blob-1
+        "
+      />
+
+      {/* Blob azul (contraparte) */}
+      <span
+        className="
+          absolute right-[-12%] bottom-[-10%]
+          h-[44rem] w-[44rem] rounded-full
+          blur-2xl opacity-45 bg-[#5B6FCF]
+          will-change-transform
+          animate-blob-2 animation-delay-2000
         "
       />
     </div>

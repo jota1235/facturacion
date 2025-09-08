@@ -1,3 +1,6 @@
+
+
+
 @import "tailwindcss";
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -57,3 +60,59 @@ body {
     animation: none !important;
   }
 }
+
+
+/* --- ROTACIÓN LENTA COMPOSABLE --- */
+@keyframes slow-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes slow-rotate-ellipse {
+  from { transform: rotate(0deg) translateX(6%) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(6%) rotate(-360deg); }
+}
+
+@keyframes slow-rotate-yoyo {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(180deg); }
+  100% { transform: rotate(0deg); }
+}
+.spin-yoyo { animation: slow-rotate-yoyo 70s ease-in-out infinite; }
+
+
+/* utilidades */
+.spin-slow      { animation: slow-rotate 80s linear infinite; }
+.spin-slower    { animation: slow-rotate 120s linear infinite; }
+.spin-reverse   { animation-direction: reverse; }
+.spin-ellipse   { animation: slow-rotate-ellipse 110s linear infinite; }
+
+/* tip accesibilidad: respeta reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .spin-slow, .spin-slower, .spin-ellipse { animation: none !important; }
+}
+
+/* ==== ROTACIÓN LENTA (compone con tus blob-float) ==== */
+@keyframes slow-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes slow-rotate-ellipse {
+  from { transform: rotate(0deg) translateX(6%) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(6%) rotate(-360deg); }
+}
+
+.spin-slow   { animation: slow-rotate 80s linear infinite; }
+.spin-slower { animation: slow-rotate 120s linear infinite; }
+.spin-ellipse{ animation: slow-rotate-ellipse 110s linear infinite; }
+.spin-reverse{ animation-direction: reverse; }
+
+/* Seguridad accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .spin-slow, .spin-slower, .spin-ellipse { animation: none !important; }
+}
+
+/* (Opcional) Debug para comprobar que las animaciones cargan */
+.debug-spin { width: 60px; height: 60px; border: 4px solid currentColor; border-radius: 9999px; animation: dbg 2s linear infinite; }
+@keyframes dbg { to { transform: rotate(360deg); } }
+

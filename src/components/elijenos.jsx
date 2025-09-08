@@ -43,7 +43,7 @@ export default function PorQueEscogernos() {
         {/* Imagen */}
         <div className="flex justify-center">
           <img
-            src="/elijenos.png"
+            src="/beneficios2.png"
             alt="Factura Electrónica"
             className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg shadow-lg ring-1 ring-slate-200 rounded-xl bg-white"
           />
