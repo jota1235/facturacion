@@ -26,11 +26,7 @@ const PruebaGratis = () => {
 
             {/* Imagen opcional */}
             <div className="mt-8 flex justify-center">
-              <img
-                src="/formulario.png"
-                alt="Demo del sistema"
-                className="w-[220px] md:w-[260px] rounded-xl shadow-lg"
-              />
+              
             </div>
           </div>
 

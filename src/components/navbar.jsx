@@ -122,7 +122,7 @@ export default function Navbar() {
               { to: "/#inicio", label: "Inicio" },
               { to: "/#servicios", label: "Servicios" },
               { to: "/#precios", label: "Precios" },
-              { to: "/#contacto", label: "Contacto" },
+              { to: "/#contacto", label: "" },
             ].map(({to, label}) => (
               <li key={to} className="group">
                 <HashLink

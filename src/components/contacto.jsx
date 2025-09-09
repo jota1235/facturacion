@@ -21,7 +21,7 @@ export default function ContactForm() {
           </p>
         </div>
 
-        {/* Tarjeta del formulario */}
+        
         <div
           className="relative rounded-3xl bg-white p-6 sm:p-8 md:p-10 border border-slate-200"
           style={{
