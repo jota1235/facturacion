@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 const BRAND = {
-  purple: '#4A1E73',  // morado fuerte
-  lilac:  '#B678BC',  // lila vivo
-  blue:   '#5C6BCF',  // azul fuerte
-  glow:   '#CBD2F4',  // halo claro
+  purple: '#4A1E73',
+  lilac:  '#B678BC',
+  blue:   '#5C6BCF',
+  glow:   '#CBD2F4',
 };
 
-const PreguntasFrecuentes = () => {
+export default function PreguntasFrecuentes() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const preguntas = [
@@ -28,26 +28,28 @@ const PreguntasFrecuentes = () => {
     },
   ];
 
-  const toggle = (index) => setOpenIndex(openIndex === index ? null : index);
+  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="bg-slate-50 text-gray-900 py-24 px-4 md:px-16">
-      <div className="max-w-5xl mx-auto">
+    <section className="bg-slate-50 text-gray-900 py-24 px-4 md:px-16" style={{ fontFamily: 'Poppins, sans-serif' }}>
+      {/* La sección puede ensancharse en XL/2XL, pero el bloque de preguntas se mantiene en 5xl */}
+      <div className="mx-auto w-full max-w-7xl xl:max-w-[95rem] 2xl:max-w-[110rem]">
+        {/* Título: igual que antes */}
         <h2 className="text-4xl md:text-5xl font-bold text-sky-600 text-center mb-16">
           Preguntas Frecuentes
         </h2>
 
-        <div className="space-y-8">
+        {/* Bloque centrado con el MISMO ancho visual de antes */}
+        <div className="mx-auto max-w-5xl space-y-8">
           {preguntas.map((item, index) => {
             const isOpen = openIndex === index;
             const id = `faq-${index}`;
-
             return (
               <div
                 key={index}
                 className="rounded-2xl overflow-hidden transition-all duration-300 border bg-white"
                 style={{
-                  borderColor: isOpen ? BRAND.purple : '#E2E8F0', // slate-200
+                  borderColor: isOpen ? BRAND.purple : '#E2E8F0',
                   boxShadow: isOpen
                     ? `10px 14px 30px rgba(92,107,207,0.35), -10px -14px 26px ${BRAND.glow}`
                     : `8px 12px 24px rgba(92,107,207,0.22), -8px -12px 22px ${BRAND.glow}`,
@@ -57,8 +59,7 @@ const PreguntasFrecuentes = () => {
                   onClick={() => toggle(index)}
                   aria-expanded={isOpen}
                   aria-controls={id}
-                  className={`w-full text-left px-8 py-6 flex justify-between items-center text-xl md:text-2xl font-semibold transition-colors duration-300
-                    ${isOpen ? '' : ''}`}
+                  className="w-full text-left px-8 py-6 flex justify-between items-center text-xl md:text-2xl font-semibold transition-colors duration-300"
                   style={{ color: isOpen ? BRAND.purple : BRAND.blue }}
                 >
                   <span>{item.pregunta}</span>
@@ -69,7 +70,7 @@ const PreguntasFrecuentes = () => {
                   id={id}
                   className={`px-8 transition-all duration-500 overflow-hidden text-base md:text-lg leading-relaxed
                     ${isOpen ? 'max-h-[400px] pb-6' : 'max-h-0 pb-0'}`}
-                  style={{ color: '#111827' }} // negro intenso
+                  style={{ color: '#111827' }}
                 >
                   {item.respuesta}
                 </div>
@@ -80,6 +81,4 @@ const PreguntasFrecuentes = () => {
       </div>
     </section>
   );
-};
-
-export default PreguntasFrecuentes;
+}

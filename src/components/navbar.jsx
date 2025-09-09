@@ -18,7 +18,6 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* NAV WRAPPER: transparente arriba, glass al scrollear */}
       <nav
         className={[
           "relative transition-all",
@@ -27,21 +26,21 @@ export default function Navbar() {
             : "bg-transparent backdrop-blur-sm"
         ].join(' ')}
       >
-        {/* Velo (opcional) para mezclar aún más con el fondo del hero */}
         {!scrolled && (
           <div
-            className="
-              pointer-events-none absolute inset-0 -z-10
-              [mask-image:linear-gradient(to_bottom,white_70%,transparent_100%)]
-              bg-white/0
-            "
+            className="pointer-events-none absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,white_70%,transparent_100%)] bg-white/0"
             aria-hidden
           />
         )}
 
-        <div className="max-w-7xl mx-auto px-6 py-4 lg:py-5 flex justify-between items-center text-slate-800">
-          <Link to="/" className="flex items-center">
-            <img src={logoEmpresa} alt="Logo Empresa" className="h-12 w-auto object-contain" />
+        {/* Contenedor: igual a 7xl en desktop; más ancho sólo en xl/2xl */}
+        <div className="mx-auto px-6 xl:px-8 2xl:px-10 py-4 lg:py-5 flex justify-between items-center text-slate-800 max-w-7xl xl:max-w-[95rem] 2xl:max-w-[110rem]">
+          <Link to="/" className="flex items-center gap-2">
+            <img
+              src={logoEmpresa}
+              alt="Logo Empresa"
+              className="h-12 xl:h-14 2xl:h-16 w-auto object-contain transition-[height]"
+            />
           </Link>
 
           {/* Botón móvil */}
@@ -68,8 +67,8 @@ export default function Navbar() {
           </div>
 
           {/* Menú desktop */}
-          <div className="hidden lg:flex items-center gap-10">
-            <ul className="flex items-center gap-8 text-lg font-semibold">
+          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
+            <ul className="flex items-center gap-8 xl:gap-10 font-semibold">
               {[
                 { to: '/#inicio', label: 'Inicio' },
                 { to: '/#servicios', label: 'Servicios' },
@@ -80,10 +79,14 @@ export default function Navbar() {
                   <HashLink
                     smooth
                     to={item.to}
-                    className="relative text-slate-700 hover:text-[#4B007D] transition focus-visible:outline-none"
+                    className="
+                      relative text-slate-700 hover:text-[#4B007D] transition
+                      text-lg xl:[font-size:clamp(1.05rem,1.1vw,1.2rem)]
+                      focus-visible:outline-none
+                    "
                   >
                     {item.label}
-                    <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-[#5B6FCF] transition-all group-hover:w-full" />
+                    <span className="absolute left-0 -bottom-1 h-[3px] xl:h-1 w-0 bg-[#5B6FCF] transition-all group-hover:w-full" />
                   </HashLink>
                 </li>
               ))}
@@ -91,16 +94,19 @@ export default function Navbar() {
 
             <Link
               to="/registro"
-              className="ml-3 bg-gradient-to-r from-[#4B007D] to-[#5B6FCF] text-white font-semibold
-                         px-6 py-3 text-lg rounded-xl shadow hover:opacity-95 active:opacity-90
-                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF] focus-visible:ring-offset-2"
+              className="
+                ml-2 bg-gradient-to-r from-[#4B007D] to-[#5B6FCF] text-white font-semibold
+                px-6 py-3 rounded-xl shadow hover:opacity-95 active:opacity-90
+                text-lg xl:[font-size:clamp(1.05rem,1.1vw,1.15rem)] xl:px-7 xl:py-3.5 2xl:px-8 2xl:py-4
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF] focus-visible:ring-offset-2
+              "
             >
               Solicita tu prueba gratuita
             </Link>
           </div>
         </div>
 
-        {/* Menú móvil: usa glass si hay scroll; arriba del todo es casi transparente con blur */}
+        {/* Menú móvil */}
         <div
           id="mobile-menu"
           className={[
