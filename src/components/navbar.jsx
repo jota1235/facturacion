@@ -33,13 +33,23 @@ export default function Navbar() {
           />
         )}
 
-        {/* Contenedor: igual a 7xl en desktop; más ancho sólo en xl/2xl */}
-        <div className="mx-auto px-6 xl:px-8 2xl:px-10 py-4 lg:py-5 flex justify-between items-center text-slate-800 max-w-7xl xl:max-w-[95rem] 2xl:max-w-[110rem]">
+        {/* Contenedor */}
+        <div
+          className="mx-auto flex justify-between items-center text-slate-800
+                     px-6 xl:px-10 2xl:px-16 py-4 lg:py-5 xl:py-6 2xl:py-8
+                     max-w-7xl xl:max-w-[95rem] 2xl:max-w-[120rem]
+                     [@media(min-width:1920px)]:max-w-[130rem]
+                     [@media(min-width:2560px)]:max-w-[150rem]
+                     [@media(min-width:1920px)]:px-20 [@media(min-width:2560px)]:px-28"
+        >
           <Link to="/" className="flex items-center gap-2">
             <img
               src={logoEmpresa}
               alt="Logo Empresa"
-              className="h-12 xl:h-14 2xl:h-16 w-auto object-contain transition-[height]"
+              className="h-12 xl:h-16 2xl:h-20
+                         [@media(min-width:1920px)]:h-24
+                         [@media(min-width:2560px)]:h-28
+                         w-auto object-contain transition-[height]"
             />
           </Link>
 
@@ -58,7 +68,12 @@ export default function Navbar() {
               aria-controls="mobile-menu"
               type="button"
             >
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-7 h-7 [@media(min-width:1920px)]:w-9 [@media(min-width:1920px)]:h-9"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 {menuOpen
                   ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
@@ -67,8 +82,8 @@ export default function Navbar() {
           </div>
 
           {/* Menú desktop */}
-          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
-            <ul className="flex items-center gap-8 xl:gap-10 font-semibold">
+          <div className="hidden lg:flex items-center gap-8 xl:gap-14 2xl:gap-16 [@media(min-width:1920px)]:gap-20 [@media(min-width:2560px)]:gap-24">
+            <ul className="flex items-center gap-8 xl:gap-12 2xl:gap-14 font-semibold">
               {[
                 { to: '/#inicio', label: 'Inicio' },
                 { to: '/#servicios', label: 'Servicios' },
@@ -79,14 +94,17 @@ export default function Navbar() {
                   <HashLink
                     smooth
                     to={item.to}
-                    className="
-                      relative text-slate-700 hover:text-[#4B007D] transition
-                      text-lg xl:[font-size:clamp(1.05rem,1.1vw,1.2rem)]
-                      focus-visible:outline-none
-                    "
+                    className="relative text-slate-700 hover:text-[#4B007D] transition
+                               text-lg xl:text-xl 2xl:text-2xl
+                               [@media(min-width:1920px)]:text-[1.6rem]
+                               [@media(min-width:2560px)]:text-[1.8rem]
+                               focus-visible:outline-none"
                   >
                     {item.label}
-                    <span className="absolute left-0 -bottom-1 h-[3px] xl:h-1 w-0 bg-[#5B6FCF] transition-all group-hover:w-full" />
+                    <span className="absolute left-0 -bottom-1 h-[3px] xl:h-[4px]
+                                     [@media(min-width:1920px)]:h-[5px]
+                                     [@media(min-width:2560px)]:h-[6px]
+                                     w-0 bg-[#5B6FCF] transition-all group-hover:w-full" />
                   </HashLink>
                 </li>
               ))}
@@ -94,12 +112,15 @@ export default function Navbar() {
 
             <Link
               to="/registro"
-              className="
-                ml-2 bg-gradient-to-r from-[#4B007D] to-[#5B6FCF] text-white font-semibold
-                px-6 py-3 rounded-xl shadow hover:opacity-95 active:opacity-90
-                text-lg xl:[font-size:clamp(1.05rem,1.1vw,1.15rem)] xl:px-7 xl:py-3.5 2xl:px-8 2xl:py-4
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF] focus-visible:ring-offset-2
-              "
+              className="ml-2 bg-gradient-to-r from-[#4B007D] to-[#5B6FCF] text-white font-semibold
+                         px-6 py-3 rounded-xl shadow hover:opacity-95 active:opacity-90
+                         text-lg xl:text-xl 2xl:text-2xl
+                         xl:px-8 xl:py-3.5 2xl:px-10 2xl:py-4
+                         [@media(min-width:1920px)]:text-[1.6rem]
+                         [@media(min-width:2560px)]:text-[1.8rem]
+                         [@media(min-width:1920px)]:px-12 [@media(min-width:2560px)]:px-14
+                         [@media(min-width:1920px)]:py-5 [@media(min-width:2560px)]:py-6
+                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF] focus-visible:ring-offset-2"
             >
               Solicita tu prueba gratuita
             </Link>
@@ -117,7 +138,7 @@ export default function Navbar() {
             menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           ].join(' ')}
         >
-          <ul className="space-y-4 font-semibold text-lg">
+          <ul className="space-y-4 font-semibold text-lg [@media(min-width:1920px)]:text-xl [@media(min-width:2560px)]:text-2xl">
             {[
               { to: "/#inicio", label: "Inicio" },
               { to: "/#servicios", label: "Servicios" },
@@ -140,6 +161,8 @@ export default function Navbar() {
             to="/registro" onClick={go}
             className="mt-5 inline-block w-full text-center bg-gradient-to-r from-[#4B007D] to-[#5B6FCF]
                        text-white font-semibold px-6 py-3 text-lg rounded-xl shadow hover:opacity-95
+                       [@media(min-width:1920px)]:text-xl [@media(min-width:2560px)]:text-2xl
+                       [@media(min-width:1920px)]:py-4 [@media(min-width:2560px)]:py-5
                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B6FCF]"
           >
             Solicita tu prueba gratuita

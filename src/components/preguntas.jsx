@@ -31,23 +31,37 @@ export default function PreguntasFrecuentes() {
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="bg-slate-50 text-gray-900 py-24 px-4 md:px-16" style={{ fontFamily: 'Poppins, sans-serif' }}>
-      {/* La sección puede ensancharse en XL/2XL, pero el bloque de preguntas se mantiene en 5xl */}
-      <div className="mx-auto w-full max-w-7xl xl:max-w-[95rem] 2xl:max-w-[110rem]">
-        {/* Título: igual que antes */}
-        <h2 className="text-4xl md:text-5xl font-bold text-sky-600 text-center mb-16">
+    <section
+      className="bg-slate-50 text-gray-900 py-24 px-4 md:px-16
+                 [@media(min-width:1920px)]:py-28
+                 [@media(min-width:2560px)]:py-32"
+      style={{ fontFamily: 'Poppins, sans-serif' }}
+    >
+      {/* Contenedor */}
+      <div
+        className="mx-auto w-full max-w-7xl xl:max-w-[95rem] 2xl:max-w-[110rem]
+                   [@media(min-width:1920px)]:max-w-[130rem]
+                   [@media(min-width:2560px)]:max-w-[150rem]"
+      >
+        {/* Título */}
+        <h2
+          className="text-4xl md:text-5xl font-bold text-sky-600 text-center mb-16
+                     [@media(min-width:1920px)]:text-[3.5rem]
+                     [@media(min-width:2560px)]:text-[4rem]"
+        >
           Preguntas Frecuentes
         </h2>
 
-        {/* Bloque centrado con el MISMO ancho visual de antes */}
-        <div className="mx-auto max-w-5xl space-y-8">
+        {/* Bloque preguntas */}
+        <div className="mx-auto max-w-5xl space-y-8 [@media(min-width:1920px)]:space-y-10">
           {preguntas.map((item, index) => {
             const isOpen = openIndex === index;
             const id = `faq-${index}`;
             return (
               <div
                 key={index}
-                className="rounded-2xl overflow-hidden transition-all duration-300 border bg-white"
+                className="rounded-2xl overflow-hidden transition-all duration-300 border bg-white
+                           [@media(min-width:1920px)]:rounded-3xl"
                 style={{
                   borderColor: isOpen ? BRAND.purple : '#E2E8F0',
                   boxShadow: isOpen
@@ -59,17 +73,28 @@ export default function PreguntasFrecuentes() {
                   onClick={() => toggle(index)}
                   aria-expanded={isOpen}
                   aria-controls={id}
-                  className="w-full text-left px-8 py-6 flex justify-between items-center text-xl md:text-2xl font-semibold transition-colors duration-300"
+                  className="w-full text-left px-8 py-6 flex justify-between items-center
+                             text-xl md:text-2xl font-semibold transition-colors duration-300
+                             [@media(min-width:1920px)]:text-[1.75rem]
+                             [@media(min-width:2560px)]:text-[2rem]
+                             [@media(min-width:1920px)]:py-7 [@media(min-width:2560px)]:py-8
+                             [@media(min-width:1920px)]:px-10 [@media(min-width:2560px)]:px-12"
                   style={{ color: isOpen ? BRAND.purple : BRAND.blue }}
                 >
                   <span>{item.pregunta}</span>
-                  <span className="text-3xl select-none">{isOpen ? '▴' : '▾'}</span>
+                  <span className="text-3xl [@media(min-width:1920px)]:text-4xl [@media(min-width:2560px)]:text-5xl select-none">
+                    {isOpen ? '▴' : '▾'}
+                  </span>
                 </button>
 
                 <div
                   id={id}
-                  className={`px-8 transition-all duration-500 overflow-hidden text-base md:text-lg leading-relaxed
-                    ${isOpen ? 'max-h-[400px] pb-6' : 'max-h-0 pb-0'}`}
+                  className={`px-8 transition-all duration-500 overflow-hidden
+                              text-base md:text-lg leading-relaxed
+                              [@media(min-width:1920px)]:text-[1.25rem]
+                              [@media(min-width:2560px)]:text-[1.4rem]
+                              [@media(min-width:1920px)]:px-10 [@media(min-width:2560px)]:px-12
+                              ${isOpen ? 'max-h-[400px] pb-6' : 'max-h-0 pb-0'}`}
                   style={{ color: '#111827' }}
                 >
                   {item.respuesta}
