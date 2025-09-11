@@ -15,10 +15,10 @@ export default function PorQueEscogernos() {
                    [@media(min-width:1920px)]:max-w-[110rem]
                    [@media(min-width:2560px)]:max-w-[130rem]"
       >
-        <div className="flex flex-col-reverse md:grid md:grid-cols-2 items-stretch gap-12 xl:gap-16 [@media(min-width:1920px)]:gap-20">
+        <div className="flex flex-col md:grid md:grid-cols-2 items-stretch gap-12 xl:gap-16 [@media(min-width:1920px)]:gap-20">
           
           {/* Texto */}
-          <div className="text-center md:text-left flex flex-col justify-center">
+          <div className="order-1 md:order-1 text-center md:text-left flex flex-col justify-center">
             <h2
               className="mb-6 font-bold leading-tight text-[#5B6FCF]
                          text-[clamp(2rem,3vw,3.25rem)]
@@ -105,7 +105,7 @@ export default function PorQueEscogernos() {
           </div>
 
           {/* Imagen */}
-          <div className="flex items-center justify-center">
+          <div className="order-2 md:order-2 flex items-center justify-center">
             <div
               className="w-full rounded-2xl bg-white shadow-lg ring-1 ring-slate-200 overflow-hidden
                          max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-[40rem] 2xl:max-w-[46rem]
