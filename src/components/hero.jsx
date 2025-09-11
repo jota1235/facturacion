@@ -19,12 +19,12 @@ export default function Hero() {
         <AuroraMotionSyServ />
       </div>
 
-      {/* Contenedor central con márgenes */}
+      {/* Contenedor central */}
       <div
         className="
           mx-auto w-full
-          px-[clamp(1rem,5vw,4rem)]
-          max-w-[min(110rem,92%)]
+          px-[clamp(1rem,4vw,3rem)]
+          max-w-[min(95rem,88%)]    /* compacto al 100% como tu imagen 2 */
         "
       >
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
@@ -34,17 +34,21 @@ export default function Hero() {
             <h1
               className="
                 font-extrabold leading-[1.15] text-[#4B007D]
-                text-[clamp(2rem,3.5vw,3.5rem)]   /* piso mínimo subido */
+                text-[clamp(2rem,3.2vw,3.5rem)]               /* base 100% */
+                [@media(min-width:1600px)]:text-[clamp(2.2rem,3vw,3.8rem)]   /* al alejar */
+                [@media(min-width:1920px)]:text-[clamp(2.4rem,2.6vw,4rem)]   /* más aire aún */
                 max-w-xl lg:max-w-2xl
               "
             >
-              Software de Facturación y Administración <br className="hidden lg:block" /> 
+              Software de Facturación y Administración <br className="hidden lg:block" />
               para pymes y emprendedores
             </h1>
 
             <p
               className="
-                mt-5 text-[clamp(1rem,2vw,1.3rem)] text-gray-700  /* piso mínimo subido */
+                mt-5 text-[clamp(1rem,2vw,1.3rem)] text-gray-700             /* base 100% */
+                [@media(min-width:1600px)]:text-[clamp(1.05rem,1.9vw,1.35rem)]/* al alejar */
+                [@media(min-width:1920px)]:text-[clamp(1.1rem,1.8vw,1.45rem)] /* más aire */
                 animate-in fade-in slide-in-from-bottom duration-700 delay-300
                 max-w-lg lg:max-w-xl
               "
@@ -62,7 +66,9 @@ export default function Hero() {
                   hover:bg-[#4B007D] hover:text-white
                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4B007D] focus-visible:ring-offset-2
                   bg-white font-bold py-3 px-6 rounded-md transition shadow-sm
-                  text-[clamp(1rem,1.2vw,1.1rem)]  /* piso mínimo subido */
+                  text-[clamp(1rem,1.2vw,1.1rem)]                      /* base 100% */
+                  [@media(min-width:1600px)]:text-[clamp(1.05rem,1.1vw,1.15rem)]
+                  [@media(min-width:1920px)]:text-[clamp(1.1rem,1vw,1.2rem)]
                 "
               >
                 Solicita tu prueba gratis
@@ -78,7 +84,9 @@ export default function Hero() {
               className="
                 w-full h-auto object-contain
                 rounded-2xl shadow-lg ring-1 ring-black/5 bg-white
-                max-w-[clamp(18rem,36vw,40rem)]   /* piso mínimo subido */
+                max-w-[clamp(20rem,34vw,40rem)]                       /* base 100% */
+                [@media(min-width:1600px)]:max-w-[clamp(21rem,33vw,42rem)] /* al alejar */
+                [@media(min-width:1920px)]:max-w-[clamp(22rem,32vw,44rem)] /* más aire */
               "
             />
           </div>

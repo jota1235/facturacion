@@ -35,21 +35,28 @@ export default function Navbar() {
 
         {/* Contenedor */}
         <div
-          className="mx-auto flex justify-between items-center text-slate-800
-                     px-6 xl:px-10 2xl:px-16 py-4 lg:py-5 xl:py-6 2xl:py-8
-                     max-w-7xl xl:max-w-[95rem] 2xl:max-w-[120rem]
-                     [@media(min-width:1920px)]:max-w-[130rem]
-                     [@media(min-width:2560px)]:max-w-[150rem]
-                     [@media(min-width:1920px)]:px-20 [@media(min-width:2560px)]:px-28"
+          className={[
+            "mx-auto flex justify-between items-center text-slate-800",
+            "px-6 xl:px-10 2xl:px-16",
+            "max-w-7xl xl:max-w-[95rem] 2xl:max-w-[120rem]",
+            "[@media(min-width:1920px)]:max-w-[130rem]",
+            "[@media(min-width:2560px)]:max-w-[150rem]",
+            "[@media(min-width:1920px)]:px-20 [@media(min-width:2560px)]:px-28",
+            scrolled
+              ? "py-2 lg:py-3 xl:py-4 2xl:py-5 transition-all duration-300"
+              : "py-4 lg:py-5 xl:py-6 2xl:py-8 transition-all duration-300"
+          ].join(" ")}
         >
           <Link to="/" className="flex items-center gap-2">
             <img
               src={logoEmpresa}
               alt="Logo Empresa"
-              className="h-12 xl:h-16 2xl:h-20
-                         [@media(min-width:1920px)]:h-24
-                         [@media(min-width:2560px)]:h-28
-                         w-auto object-contain transition-[height]"
+              className={[
+                "w-auto object-contain transition-all duration-300",
+                scrolled
+                  ? "h-10 xl:h-12 2xl:h-14 [@media(min-width:1920px)]:h-16 [@media(min-width:2560px)]:h-20"
+                  : "h-12 xl:h-16 2xl:h-20 [@media(min-width:1920px)]:h-24 [@media(min-width:2560px)]:h-28"
+              ].join(" ")}
             />
           </Link>
 
