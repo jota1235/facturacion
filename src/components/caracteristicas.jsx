@@ -60,7 +60,7 @@ export default function Caracteristicas() {
             {caracteristicas.slice(0, 6).map((item, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center text-center
+                className="flex flex-col items-center justify-center text-center
                            p-6 rounded-xl bg-white shadow-sm
                            transition-all duration-300 ease-out
                            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.03]
@@ -89,7 +89,7 @@ export default function Caracteristicas() {
               {caracteristicas.slice(6).map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col items-center text-center
+                  className="flex flex-col items-center justify-center text-center
                              p-6 rounded-xl bg-white shadow-sm
                              transition-all duration-300 ease-out
                              hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.03]
@@ -113,7 +113,7 @@ export default function Caracteristicas() {
             {caracteristicas.slice(6).map((item, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center text-center
+                className="flex flex-col items-center justify-center text-center
                            p-6 rounded-xl bg-white shadow-sm
                            transition-all duration-300 ease-out
                            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.03]
@@ -133,7 +133,7 @@ export default function Caracteristicas() {
             {caracteristicas.slice(0, 6).map((item, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center text-center
+                className="flex flex-col items-center justify-center text-center
                            p-6 rounded-xl bg-white shadow-sm
                            transition-all duration-300 ease-out
                            hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.03]
