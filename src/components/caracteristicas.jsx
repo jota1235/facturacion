@@ -128,7 +128,7 @@ export default function Caracteristicas() {
             ))}
           </div>
 
-          {/* Primeras características */}
+         
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
             {caracteristicas.slice(0, 6).map((item, idx) => (
               <div
